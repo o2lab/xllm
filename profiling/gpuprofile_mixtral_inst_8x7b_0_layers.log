@@ -1,0 +1,144 @@
+Log start
+main: build = 1752 (f3f62f0)
+main: built with cc (GCC) 10.3.0 for x86_64-pc-linux-gnu
+main: seed  = 1704310278
+==148537== NVPROF is profiling process 148537, command: ./main -m ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf -n 128 -p [INST] Explain Deep Learning. [/INST]
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 2 CUDA devices:
+  Device 0: Quadro RTX 6000, compute capability 7.5, VMM: yes
+  Device 1: Quadro RTX 6000, compute capability 7.5, VMM: yes
+llama_model_loader: loaded meta data with 26 key-value pairs and 995 tensors from ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = snapshots
+llama_model_loader: - kv   2:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   4:                          llama.block_count u32              = 32
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   9:                         llama.expert_count u32              = 8
+llama_model_loader: - kv  10:                    llama.expert_used_count u32              = 2
+llama_model_loader: - kv  11:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  12:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  13:                          general.file_type u32              = 2
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,58980]   = ["▁ t", "i n", "e r", "▁ a", "h e...
+llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  22:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  23:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  25:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type  f16:   32 tensors
+llama_model_loader: - type q4_0:  833 tensors
+llama_model_loader: - type q8_0:   64 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens definition check successful ( 259/32000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 32000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 32768
+llm_load_print_meta: n_embd           = 4096
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 8
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 128
+llm_load_print_meta: n_embd_head_k    = 128
+llm_load_print_meta: n_embd_head_v    = 128
+llm_load_print_meta: n_gqa            = 4
+llm_load_print_meta: n_embd_k_gqa     = 1024
+llm_load_print_meta: n_embd_v_gqa     = 1024
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 14336
+llm_load_print_meta: n_expert         = 8
+llm_load_print_meta: n_expert_used    = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 1000000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 32768
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 7B
+llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model params     = 46.70 B
+llm_load_print_meta: model size       = 24.62 GiB (4.53 BPW) 
+llm_load_print_meta: general.name     = snapshots
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: LF token         = 13 '<0x0A>'
+llm_load_tensors: ggml ctx size       =    0.38 MiB
+llm_load_tensors: using CUDA for GPU acceleration
+llm_load_tensors: system memory used  = 25216.25 MiB
+llm_load_tensors: offloading 0 repeating layers to GPU
+llm_load_tensors: offloaded 0/33 layers to GPU
+....................................................................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 1000000.0
+llama_new_context_with_model: freq_scale = 1
+llama_new_context_with_model: KV self size  =   64.00 MiB, K (f16):   32.00 MiB, V (f16):   32.00 MiB
+llama_build_graph: non-view tensors processed: 1124/1124
+llama_new_context_with_model: compute buffer total size = 117.72 MiB
+
+system_info: n_threads = 24 / 48 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 0 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temp 
+generate: n_ctx = 512, n_batch = 512, n_predict = 128, n_keep = 0
+
+
+ [INST] Explain Deep Learning. [/INST] Deep learning is a subset of machine learning, which in turn is a branch of artificial intelligence (AI). Deep learning models are inspired by the structure and function of the brain, specifically the interconnecting of many neurons, and are therefore also known as neural networks.
+
+Deep learning models are designed to automatically and adaptively learn to represent data by training on large amounts of data over many layers of computation. These models can learn complex patterns and abstractions in data, making them very effective for tasks such as image and speech recognition, natural language processing, and game playing.
+
+Deep learning models consist of input and output layers
+llama_print_timings:        load time =    4130.72 ms
+llama_print_timings:      sample time =      54.40 ms /   128 runs   (    0.42 ms per token,  2353.07 tokens per second)
+llama_print_timings: prompt eval time =     856.48 ms /    13 tokens (   65.88 ms per token,    15.18 tokens per second)
+llama_print_timings:        eval time =   17548.05 ms /   127 runs   (  138.17 ms per token,     7.24 tokens per second)
+llama_print_timings:       total time =   18503.41 ms
+Log end
+==148537== Profiling application: ./main -m ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf -n 128 -p [INST] Explain Deep Learning. [/INST]
+==148537== Profiling result:
+No kernels were profiled.
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+      API calls:   62.00%  417.81ms        16  26.113ms  1.7460us  417.35ms  cudaStreamCreateWithFlags
+                   23.81%  160.46ms         1  160.46ms  160.46ms  160.46ms  cudaSetDevice
+                    5.42%  36.512ms         4  9.1280ms  2.1361ms  16.973ms  cudaFree
+                    4.18%  28.148ms         1  28.148ms  28.148ms  28.148ms  cudaMallocHost
+                    2.04%  13.730ms       674  20.371us     161ns  2.1398ms  cuDeviceGetAttribute
+                    1.62%  10.951ms         1  10.951ms  10.951ms  10.951ms  cudaFreeHost
+                    0.74%  4.9931ms         2  2.4966ms  1.4735ms  3.5196ms  cudaGetDeviceProperties
+                    0.06%  409.70us       766     534ns     211ns  13.003us  cuGetProcAddress
+                    0.06%  401.10us         2  200.55us  122.61us  278.48us  cudaGetSymbolAddress
+                    0.04%  294.18us         6  49.029us  2.6940us  85.685us  cudaMalloc
+                    0.01%  88.390us         8  11.048us  5.4310us  17.950us  cuDeviceGetName
+                    0.00%  28.738us         8  3.5920us     264ns  12.935us  cudaGetDevice
+                    0.00%  28.409us        36     789ns     302ns  8.4270us  cudaEventCreateWithFlags
+                    0.00%  12.059us        32     376ns     182ns  1.9790us  cudaDeviceGetAttribute
+                    0.00%  8.4750us         2  4.2370us  2.8300us  5.6450us  cuDeviceGetPCIBusId
+                    0.00%  7.6420us         2  3.8210us     307ns  7.3350us  cuMemGetAllocationGranularity
+                    0.00%  6.1310us        12     510ns     156ns  3.2820us  cuDeviceGet
+                    0.00%  5.4650us         2  2.7320us     850ns  4.6150us  cuInit
+                    0.00%  5.3060us         1  5.3060us  5.3060us  5.3060us  cudaGetDeviceCount
+                    0.00%  4.6130us         4  1.1530us     434ns  1.9990us  cudaGetDriverEntryPoint
+                    0.00%  2.4130us         6     402ns     278ns     592ns  cuDeviceTotalMem
+                    0.00%  2.2390us         5     447ns     192ns     928ns  cuDeviceGetCount
+                    0.00%  1.9670us         6     327ns     230ns     451ns  cuDeviceGetUuid
+                    0.00%  1.1200us         3     373ns     330ns     444ns  cuModuleGetLoadingMode
+                    0.00%     778ns         2     389ns     320ns     458ns  cuDriverGetVersion

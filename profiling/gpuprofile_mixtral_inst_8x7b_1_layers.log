@@ -1,0 +1,201 @@
+Log start
+main: build = 1752 (f3f62f0)
+main: built with cc (GCC) 10.3.0 for x86_64-pc-linux-gnu
+main: seed  = 1704310244
+==130307== NVPROF is profiling process 130307, command: ./main -m ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf -n 128 -p [INST] Explain Deep Learning. [/INST] --n-gpu-layers 1
+ggml_init_cublas: GGML_CUDA_FORCE_MMQ:   no
+ggml_init_cublas: CUDA_USE_TENSOR_CORES: yes
+ggml_init_cublas: found 2 CUDA devices:
+  Device 0: Quadro RTX 6000, compute capability 7.5, VMM: yes
+  Device 1: Quadro RTX 6000, compute capability 7.5, VMM: yes
+llama_model_loader: loaded meta data with 26 key-value pairs and 995 tensors from ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = llama
+llama_model_loader: - kv   1:                               general.name str              = snapshots
+llama_model_loader: - kv   2:                       llama.context_length u32              = 32768
+llama_model_loader: - kv   3:                     llama.embedding_length u32              = 4096
+llama_model_loader: - kv   4:                          llama.block_count u32              = 32
+llama_model_loader: - kv   5:                  llama.feed_forward_length u32              = 14336
+llama_model_loader: - kv   6:                 llama.rope.dimension_count u32              = 128
+llama_model_loader: - kv   7:                 llama.attention.head_count u32              = 32
+llama_model_loader: - kv   8:              llama.attention.head_count_kv u32              = 8
+llama_model_loader: - kv   9:                         llama.expert_count u32              = 8
+llama_model_loader: - kv  10:                    llama.expert_used_count u32              = 2
+llama_model_loader: - kv  11:     llama.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  12:                       llama.rope.freq_base f32              = 1000000.000000
+llama_model_loader: - kv  13:                          general.file_type u32              = 2
+llama_model_loader: - kv  14:                       tokenizer.ggml.model str              = llama
+llama_model_loader: - kv  15:                      tokenizer.ggml.tokens arr[str,32000]   = ["<unk>", "<s>", "</s>", "<0x00>", "<...
+llama_model_loader: - kv  16:                      tokenizer.ggml.scores arr[f32,32000]   = [0.000000, 0.000000, 0.000000, 0.0000...
+llama_model_loader: - kv  17:                  tokenizer.ggml.token_type arr[i32,32000]   = [2, 3, 3, 6, 6, 6, 6, 6, 6, 6, 6, 6, ...
+llama_model_loader: - kv  18:                      tokenizer.ggml.merges arr[str,58980]   = ["▁ t", "i n", "e r", "▁ a", "h e...
+llama_model_loader: - kv  19:                tokenizer.ggml.bos_token_id u32              = 1
+llama_model_loader: - kv  20:                tokenizer.ggml.eos_token_id u32              = 2
+llama_model_loader: - kv  21:            tokenizer.ggml.unknown_token_id u32              = 0
+llama_model_loader: - kv  22:               tokenizer.ggml.add_bos_token bool             = true
+llama_model_loader: - kv  23:               tokenizer.ggml.add_eos_token bool             = false
+llama_model_loader: - kv  24:                    tokenizer.chat_template str              = {{ bos_token }}{% for message in mess...
+llama_model_loader: - kv  25:               general.quantization_version u32              = 2
+llama_model_loader: - type  f32:   65 tensors
+llama_model_loader: - type  f16:   32 tensors
+llama_model_loader: - type q4_0:  833 tensors
+llama_model_loader: - type q8_0:   64 tensors
+llama_model_loader: - type q6_K:    1 tensors
+llm_load_vocab: special tokens definition check successful ( 259/32000 ).
+llm_load_print_meta: format           = GGUF V3 (latest)
+llm_load_print_meta: arch             = llama
+llm_load_print_meta: vocab type       = SPM
+llm_load_print_meta: n_vocab          = 32000
+llm_load_print_meta: n_merges         = 0
+llm_load_print_meta: n_ctx_train      = 32768
+llm_load_print_meta: n_embd           = 4096
+llm_load_print_meta: n_head           = 32
+llm_load_print_meta: n_head_kv        = 8
+llm_load_print_meta: n_layer          = 32
+llm_load_print_meta: n_rot            = 128
+llm_load_print_meta: n_embd_head_k    = 128
+llm_load_print_meta: n_embd_head_v    = 128
+llm_load_print_meta: n_gqa            = 4
+llm_load_print_meta: n_embd_k_gqa     = 1024
+llm_load_print_meta: n_embd_v_gqa     = 1024
+llm_load_print_meta: f_norm_eps       = 0.0e+00
+llm_load_print_meta: f_norm_rms_eps   = 1.0e-05
+llm_load_print_meta: f_clamp_kqv      = 0.0e+00
+llm_load_print_meta: f_max_alibi_bias = 0.0e+00
+llm_load_print_meta: n_ff             = 14336
+llm_load_print_meta: n_expert         = 8
+llm_load_print_meta: n_expert_used    = 2
+llm_load_print_meta: rope scaling     = linear
+llm_load_print_meta: freq_base_train  = 1000000.0
+llm_load_print_meta: freq_scale_train = 1
+llm_load_print_meta: n_yarn_orig_ctx  = 32768
+llm_load_print_meta: rope_finetuned   = unknown
+llm_load_print_meta: model type       = 7B
+llm_load_print_meta: model ftype      = Q4_0
+llm_load_print_meta: model params     = 46.70 B
+llm_load_print_meta: model size       = 24.62 GiB (4.53 BPW) 
+llm_load_print_meta: general.name     = snapshots
+llm_load_print_meta: BOS token        = 1 '<s>'
+llm_load_print_meta: EOS token        = 2 '</s>'
+llm_load_print_meta: UNK token        = 0 '<unk>'
+llm_load_print_meta: LF token         = 13 '<0x0A>'
+llm_load_tensors: ggml ctx size       =    0.38 MiB
+llm_load_tensors: using CUDA for GPU acceleration
+llm_load_tensors: system memory used  = 24433.65 MiB
+llm_load_tensors: VRAM used           =  782.59 MiB
+llm_load_tensors: offloading 1 repeating layers to GPU
+llm_load_tensors: offloaded 1/33 layers to GPU
+....................................................................................................
+llama_new_context_with_model: n_ctx      = 512
+llama_new_context_with_model: freq_base  = 1000000.0
+llama_new_context_with_model: freq_scale = 1
+llama_kv_cache_init: VRAM kv self = 2.00 MB
+llama_new_context_with_model: KV self size  =   64.00 MiB, K (f16):   32.00 MiB, V (f16):   32.00 MiB
+llama_build_graph: non-view tensors processed: 1124/1124
+llama_new_context_with_model: compute buffer total size = 117.72 MiB
+llama_new_context_with_model: VRAM scratch buffer: 114.53 MiB
+llama_new_context_with_model: total VRAM used: 899.13 MiB (model: 782.59 MiB, context: 116.53 MiB)
+
+system_info: n_threads = 24 / 48 | AVX = 1 | AVX_VNNI = 0 | AVX2 = 1 | AVX512 = 1 | AVX512_VBMI = 0 | AVX512_VNNI = 1 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 1 | SSSE3 = 1 | VSX = 0 | 
+sampling: 
+	repeat_last_n = 64, repeat_penalty = 1.100, frequency_penalty = 0.000, presence_penalty = 0.000
+	top_k = 40, tfs_z = 1.000, top_p = 0.950, min_p = 0.050, typical_p = 1.000, temp = 0.800
+	mirostat = 0, mirostat_lr = 0.100, mirostat_ent = 5.000
+sampling order: 
+CFG -> Penalties -> top_k -> tfs_z -> typical_p -> top_p -> min_p -> temp 
+generate: n_ctx = 512, n_batch = 512, n_predict = 128, n_keep = 0
+
+
+ [INST] Explain Deep Learning. [/INST] Deep learning is a subset of machine learning, which in turn is a branch of artificial intelligence (AI). It involves the use of artificial neural networks, which are computer systems designed to simulate the way that human brains analyze and process information.
+
+Deep learning models are composed of multiple layers of interconnected nodes, or "neurons," through which data flows. These models learn to represent data at increasingly higher levels of abstraction as they move from input to output layers. This allows them to automatically extract features from raw data and make intelligent decisions based on that information.
+
+Deep learning has revolutionized many fields, including computer vision
+llama_print_timings:        load time =    4482.12 ms
+llama_print_timings:      sample time =      55.49 ms /   128 runs   (    0.43 ms per token,  2306.56 tokens per second)
+llama_print_timings: prompt eval time =     836.65 ms /    13 tokens (   64.36 ms per token,    15.54 tokens per second)
+llama_print_timings:        eval time =   17632.19 ms /   127 runs   (  138.84 ms per token,     7.20 tokens per second)
+llama_print_timings:       total time =   18572.57 ms
+Log end
+==130307== Profiling application: ./main -m ./models/Mixtral-8x7B-Instruct-v0.1-q4_0.gguf -n 128 -p [INST] Explain Deep Learning. [/INST] --n-gpu-layers 1
+==130307== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   57.68%  193.35ms     13934  13.876us     479ns  3.5676ms  [CUDA memcpy HtoD]
+                   19.61%  65.740ms      2074  31.697us  12.544us  44.000us  void mul_mat_vec_q<int=32, int=4, block_q4_0, int=2, __operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::vec_dot_q4_0_q8_1(void const *, block_q8_1 const *, int const &))>(void const *, void const *, float*, int, int)
+                    7.18%  24.077ms     14262  1.6880us     832ns  17.184us  [CUDA memcpy DtoH]
+                    4.24%  14.208ms      8256  1.7200us  1.6630us  2.8150us  void rope<float, bool=1>(float const *, float*, int, int const *, float, int, float, float, float, rope_corr_dims)
+                    3.71%  12.447ms      4257  2.9230us  2.4320us  3.5840us  soft_max_f32(float const *, float const *, float*, int, int, float)
+                    1.24%  4.1435ms       508  8.1560us  7.7120us  8.6400us  void mul_mat_vec_q<int=32, int=8, block_q8_0, int=2, __operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::vec_dot_q8_0_q8_1(void const *, block_q8_1 const *, int const &))>(void const *, void const *, float*, int, int)
+                    1.06%  3.5560ms        50  71.120us  24.736us  114.21us  void mul_mat_q4_0<bool=0>(void const *, void const *, float*, int, int, int, int, int)
+                    0.86%  2.8771ms      1278  2.2510us  1.1510us  10.336us  [CUDA memcpy PtoP]
+                    0.76%  2.5352ms      1320  1.9200us  1.7280us  2.7190us  quantize_q8_1(float const *, void*, int, int)
+                    0.65%  2.1920ms       254  8.6300us  6.4000us  10.048us  turing_h1688gemm_128x128_ldg8_stages_32x1_tn
+                    0.61%  2.0481ms       774  2.6460us  2.2720us  5.2480us  void k_bin_bcast<__operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::op_mul(float, float)), float, float, float>(float const *, float const *, float*, int, int, int, int, int, int, int, int, int, int, int, int, int, int)
+                    0.42%  1.4058ms       387  3.6320us  3.3920us  3.8400us  void rms_norm_f32<int=1024>(float const *, float*, int, float)
+                    0.29%  970.52us       387  2.5070us  2.2070us  3.1040us  void k_bin_bcast<__operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::op_add(float, float)), float, float, float>(float const *, float const *, float*, int, int, int, int, int, int, int, int, int, int, int, int, int, int)
+                    0.19%  623.61us       387  1.6110us  1.5670us  2.1440us  void dequantize_block<int=1, int=1, __operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::convert_f32(void const *, int, int, float2&)), __half>(void const *, __half*, int)
+                    0.18%  604.70us       387  1.5620us  1.5030us  1.9200us  void dequantize_block<int=1, int=1, __operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::convert_f16(void const *, int, int, float2&)), float>(void const *, float*, int)
+                    0.17%  558.28us       129  4.3270us  3.8710us  4.4800us  void cutlass::Kernel<cutlass_75_wmma_tensorop_h161616gemm_16x16_128x2_tn_align8>(cutlass_75_wmma_tensorop_h161616gemm_16x16_128x2_tn_align8Params)
+                    0.16%  530.94us       258  2.0570us  1.9520us  3.7760us  silu_f32(float const *, float*, int)
+                    0.14%  466.62us       258  1.8080us  1.7280us  2.1760us  void cpy_f32_f16<__operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::cpy_1_f32_f16(char const *, char*))>(char const *, char*, int, int, int, int, int, int, int, int, int, int, int)
+                    0.14%  466.04us       258  1.8060us  1.7600us  1.8560us  k_compute_batched_ptrs(__half const *, __half const *, char*, void const **, void**, long, long, long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, long, long)
+                    0.11%  380.77us       129  2.9510us  2.8790us  3.0400us  void k_argsort_f32_i32<ggml_sort_order=1>(float const *, int*, int)
+                    0.10%  324.32us       129  2.5140us  2.2720us  2.6880us  void k_get_rows_float<float, float>(float const *, int const *, float*, long, long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)
+                    0.10%  319.45us       180  1.7740us  1.4720us  2.1760us  [CUDA memcpy DtoD]
+                    0.09%  285.06us         8  35.632us  32.064us  38.144us  void mul_mat_q8_0<bool=0>(void const *, void const *, float*, int, int, int, int, int)
+                    0.08%  275.78us       129  2.1370us  2.1120us  2.1770us  void k_bin_bcast<__operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::op_div(float, float)), float, float, float>(float const *, float const *, float*, int, int, int, int, int, int, int, int, int, int, int, int, int, int)
+                    0.08%  272.22us       129  2.1100us  2.0480us  2.8160us  void cublasLt::splitKreduce_kernel<int=32, int=16, int, __half, __half, __half, __half, bool=1, bool=0, bool=0>(cublasLt::cublasSplitKParams<__half>, __half const *, __half const *, __half const **, cublasLt::cublasSplitKParams const *, cublasLt::cublasSplitKParams const , __half const *, __half const , cublasLt::cublasSplitKParams const **, void*, long, cublasLt::cublasSplitKParams*, int*)
+                    0.08%  263.32us       129  2.0410us  1.6640us  2.1440us  k_sum_rows_f32(float const *, float*, int)
+                    0.07%  242.75us       129  1.8810us  1.8240us  3.5200us  void cpy_f32_f16<__operator_&__(_INTERNAL_daad6cf0_12_ggml_cuda_cu_fe7a8db3::cpy_1_f32_f32(char const *, char*))>(char const *, char*, int, int, int, int, int, int, int, int, int, int, int)
+                    0.01%  26.848us         2  13.424us  8.0320us  18.816us  void gemmSN_TN_kernel_half<int=256, int=8, int=2, int=4, int=7, cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half>>(cublasGemmSmallNParams<__half const , cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half const >, __half>)
+                    0.00%  10.464us         2  5.2320us  4.9920us  5.4720us  void gemmSN_TN_kernel_half<int=256, int=8, int=2, int=4, int=2, cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half>>(cublasGemmSmallNParams<__half const , cublasGemvTensorBatched<__half const >, cublasGemvTensorBatched<__half const >, __half>)
+                    0.00%  5.8560us         2  2.9280us  2.7520us  3.1040us  [CUDA memset]
+      API calls:   25.38%  337.24ms     25335  13.311us  3.2660us  1.1367ms  cudaMemcpyAsync
+                   14.08%  187.09ms       317  590.19us  3.8870us  3.8032ms  cudaMemcpy
+                   13.17%  175.08ms      5407  32.380us     320ns  172.14ms  cudaSetDevice
+                   13.12%  174.37ms        16  10.898ms  2.1360us  174.04ms  cudaStreamCreateWithFlags
+                   11.72%  155.70ms     20730  7.5100us  3.0120us  9.6175ms  cudaLaunchKernel
+                    4.80%  63.849ms        66  967.41us  5.9090us  15.823ms  cudaFree
+                    2.32%  30.795ms     12128  2.5390us  1.4110us  578.70us  cudaDeviceSynchronize
+                    2.19%  29.059ms     55018     528ns     166ns  1.3300ms  cudaGetDevice
+                    2.15%  28.609ms       140  204.35us     318ns  18.077ms  cudaOccupancyMaxActiveBlocksPerMultiprocessorWithFlags
+                    1.94%  25.766ms         1  25.766ms  25.766ms  25.766ms  cudaMallocHost
+                    1.67%  22.201ms       116  191.38us     277ns  12.931ms  cudaFuncSetAttribute
+                    1.28%  17.067ms      1320  12.929us  7.6340us  740.76us  cudaMemcpyPeerAsync
+                    1.12%  14.908ms       674  22.118us      80ns  2.3241ms  cuDeviceGetAttribute
+                    1.10%  14.679ms         2  7.3395ms  5.5414ms  9.1376ms  cudaDeviceEnablePeerAccess
+                    0.77%  10.175ms         1  10.175ms  10.175ms  10.175ms  cudaFreeHost
+                    0.65%  8.6275ms      1320  6.5360us  3.8270us  532.28us  cudaMemcpy3DPeerAsync
+                    0.58%  7.6869ms        68  113.04us  2.3920us  315.78us  cudaMalloc
+                    0.56%  7.4170ms      3960  1.8720us     546ns  41.374us  cudaStreamWaitEvent
+                    0.42%  5.5558ms      2769  2.0060us     633ns  586.08us  cudaEventRecord
+                    0.36%  4.7766ms     19569     244ns      91ns  509.52us  cudaGetLastError
+                    0.31%  4.1075ms         2  2.0537ms  1.6087ms  2.4987ms  cudaGetDeviceProperties
+                    0.09%  1.2456ms       774  1.6090us  1.1480us  15.272us  cudaStreamSynchronize
+                    0.05%  658.00us       100  6.5800us     284ns  102.51us  cudaOccupancyMaxActiveBlocksPerMultiprocessor
+                    0.04%  503.21us       484  1.0390us     302ns  8.4310us  cudaEventCreateWithFlags
+                    0.04%  501.46us       645     777ns     206ns  13.504us  cudaStreamGetCaptureInfo
+                    0.03%  355.90us         2  177.95us  136.62us  219.29us  cudaGetSymbolAddress
+                    0.02%  242.00us       448     540ns     285ns  15.893us  cudaEventDestroy
+                    0.01%  180.30us       766     235ns      93ns  2.2350us  cuGetProcAddress
+                    0.01%  134.76us         2  67.378us  57.904us  76.853us  cuMemSetAccess
+                    0.01%  128.06us         2  64.027us  45.460us  82.595us  cuMemCreate
+                    0.01%  72.666us         2  36.333us  10.368us  62.298us  cudaMemset
+                    0.01%  66.528us         8  8.3160us  2.6690us  14.624us  cuDeviceGetName
+                    0.00%  22.364us         2  11.182us  10.590us  11.774us  cuMemAddressReserve
+                    0.00%  18.490us         2  9.2450us  5.2120us  13.278us  cuDeviceGetPCIBusId
+                    0.00%  17.637us         2  8.8180us     524ns  17.113us  cuMemGetAllocationGranularity
+                    0.00%  13.570us         2  6.7850us  1.1600us  12.410us  cudaDeviceCanAccessPeer
+                    0.00%  12.110us        32     378ns     174ns  1.7220us  cudaDeviceGetAttribute
+                    0.00%  7.5340us         1  7.5340us  7.5340us  7.5340us  cudaGetDeviceCount
+                    0.00%  6.9180us         2  3.4590us  2.9230us  3.9950us  cuMemMap
+                    0.00%  6.3540us        12     529ns      79ns  3.3740us  cuDeviceGet
+                    0.00%  4.9310us         1  4.9310us  4.9310us  4.9310us  cudaEventQuery
+                    0.00%  4.2560us         4  1.0640us     342ns  2.1120us  cudaGetDriverEntryPoint
+                    0.00%  2.4180us         2  1.2090us     525ns  1.8930us  cuInit
+                    0.00%  2.1990us         5     439ns     141ns  1.2640us  cuDeviceGetCount
+                    0.00%  1.9500us         6     325ns     173ns     615ns  cuDeviceTotalMem
+                    0.00%  1.3280us         6     221ns     116ns     475ns  cuDeviceGetUuid
+                    0.00%     931ns         3     310ns     127ns     548ns  cuModuleGetLoadingMode
+                    0.00%     443ns         2     221ns     204ns     239ns  cuMemRelease
+                    0.00%     248ns         2     124ns     114ns     134ns  cuDriverGetVersion
