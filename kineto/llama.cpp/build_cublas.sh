@@ -1,0 +1,1 @@
+make LLAMA_CUBLAS=1 -j4
