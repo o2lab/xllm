@@ -918,16 +918,54 @@ int main() {
   // Empty types set defaults to all types
   std::set<libkineto::ActivityType> types;
   
+    // Kineto config
+  // https://github.com/pytorch/kineto/blob/main/libkineto/include/ActivityType.h
+//   https://github.com/pytorch/kineto/blob/main/libkineto/src/ActivityType.cpp
+  std::set<libkineto::ActivityType> types_cupti_prof = {
+    // libkineto::ActivityType::GPU_USER_ANNOTATION,
+    // libkineto::ActivityType::GPU_MEMCPY,
+    // libkineto::ActivityType::GPU_MEMSET,
+    // libkineto::ActivityType::CONCURRENT_KERNEL,
+    // libkineto::ActivityType::CUDA_RUNTIME,
+    // libkineto::ActivityType::CUDA_DRIVER,
+    // libkineto::ActivityType::PYTHON_FUNCTION,
+    // libkineto::ActivityType::CUDA_SYNC,
+    // libkineto::ActivityType::USER_ANNOTATION,
+    libkineto::ActivityType::CUDA_PROFILER_RANGE,
+  };
+
+//   void libkineto_init(bool cpuOnly, bool logOnError);
   libkineto_init(false, true);
   libkineto::api().initProfilerIfRegistered();
 
   auto& profiler = libkineto::api().activityProfiler();
-  profiler.prepareTrace(types);
+
+  // Use a special kineto__cuda_core_flop metric that counts individual
+  // CUDA core floating point instructions by operation type (fma,fadd,fmul,dadd ...)
+  // You can also use kineto__tensor_core_insts or any metric
+  // or any metric defined by CUPTI Profiler below
+  //   https://docs.nvidia.com/cupti/r_main.html#r_profiler
+
+
+// https://github.com/pytorch/kineto/blob/main/libkineto/src/Config.cpp
+  std::string profiler_config = "";
+    // "ACTIVITIES_WARMUP_PERIOD_SECS=5\n "
+    // "CUPTI_PROFILER_METRICS=kineto__cuda_core_flops\n "
+    // "ACTIVITIES_DURATION_SECS=100\n "
+    // "ACTIVITIES_MAX_GPU_BUFFER_SIZE_MB=2048\n "
+    // "PROFILE_WITH_FLOPS=true\n ";
+    // "PROFILE_WITH_STACK=true\n "
+    // "PROFILE_PROFILE_MEMORY=true\n "
+    // "CUPTI_PROFILER_ENABLE_PER_KERNEL=true";
+
+//   profiler.prepareTrace(types);
+  profiler.prepareTrace(types_cupti_prof, profiler_config);
+
 
   // Good to warm up after prepareTrace to get cupti initialization to settle
-  warmup();
-  profiler.startTrace();
+//   warmup();
 //   playground();
+//   profiler.startTrace();
 
   // LLAMA.CPP
 //   llama_cpp(int argc, char ** argv)
@@ -941,8 +979,13 @@ int main() {
   char** l_argv = const_cast<char**>(llama_argv);
   llama_cpp(l_argc, l_argv);
 
+  profiler.startTrace();
+  llama_cpp(l_argc, l_argv);
+
+
   auto trace = profiler.stopTrace();
   std::cout << "Stopped and processed trace. Got " << trace->activities()->size() << " activities.";
   trace->save(kFileName);
+  std::cout << "Done" << std::endl;
   return 0;
 }
