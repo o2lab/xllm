@@ -910,7 +910,7 @@ using namespace kineto;
 
 static const std::string kFileName = "/tmp/kineto_trace.json";
 
-int main() {
+int main(int argc, char ** argv) {
   warmup();
 
   // Kineto config
@@ -922,15 +922,15 @@ int main() {
   // https://github.com/pytorch/kineto/blob/main/libkineto/include/ActivityType.h
 //   https://github.com/pytorch/kineto/blob/main/libkineto/src/ActivityType.cpp
   std::set<libkineto::ActivityType> types_cupti_prof = {
-    // libkineto::ActivityType::GPU_USER_ANNOTATION,
-    // libkineto::ActivityType::GPU_MEMCPY,
-    // libkineto::ActivityType::GPU_MEMSET,
-    // libkineto::ActivityType::CONCURRENT_KERNEL,
-    // libkineto::ActivityType::CUDA_RUNTIME,
-    // libkineto::ActivityType::CUDA_DRIVER,
-    // libkineto::ActivityType::PYTHON_FUNCTION,
-    // libkineto::ActivityType::CUDA_SYNC,
-    // libkineto::ActivityType::USER_ANNOTATION,
+    libkineto::ActivityType::GPU_USER_ANNOTATION,
+    libkineto::ActivityType::GPU_MEMCPY,
+    libkineto::ActivityType::GPU_MEMSET,
+    libkineto::ActivityType::CONCURRENT_KERNEL,
+    libkineto::ActivityType::CUDA_RUNTIME,
+    libkineto::ActivityType::CUDA_DRIVER,
+    libkineto::ActivityType::PYTHON_FUNCTION,
+    libkineto::ActivityType::CUDA_SYNC,
+    libkineto::ActivityType::USER_ANNOTATION,
     libkineto::ActivityType::CUDA_PROFILER_RANGE,
   };
 
@@ -963,7 +963,7 @@ int main() {
 
 
   // Good to warm up after prepareTrace to get cupti initialization to settle
-//   warmup();
+  warmup();
 //   playground();
 //   profiler.startTrace();
 
@@ -977,10 +977,14 @@ int main() {
 // Use the hard-coded values
   int l_argc = llama_argc;
   char** l_argv = const_cast<char**>(llama_argv);
-  llama_cpp(l_argc, l_argv);
+//   llama_cpp(l_argc, l_argv);
 
   profiler.startTrace();
-  llama_cpp(l_argc, l_argv);
+  if (argc==1) {
+    llama_cpp(l_argc, l_argv);
+  } else {
+    llama_cpp(argc, argv);
+  }
 
 
   auto trace = profiler.stopTrace();
@@ -989,3 +993,4 @@ int main() {
   std::cout << "Done" << std::endl;
   return 0;
 }
+
