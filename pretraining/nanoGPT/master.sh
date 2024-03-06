@@ -1,0 +1,1 @@
+torchrun  --nproc_per_node=2 --nnodes=2 --node_rank=0 --master_addr=g075 --master_port=1234  train.py config/train_gpt2.py
