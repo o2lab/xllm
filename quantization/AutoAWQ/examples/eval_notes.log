@@ -1,0 +1,19 @@
+Successfully installed lm_eval-0.4.1
+
+Does not work for 0.4.2, as a change in task API.
+
+(llm) [siweicui@grace1 AutoAWQ]$ python examples/eval.py --model_path /scratch/user/siweicui/mix_precision/mistralai-7B-awq 
+2024-03-20:17:31:59,942 INFO     [utils.py:148] Note: NumExpr detected 48 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2024-03-20:17:32:00,284 INFO     [config.py:58] PyTorch version 2.2.1+cu118 available.
+Replacing layers...: 100%|█████████████████████████████████████████| 32/32 [00:03<00:00,  8.34it/s]
+2024-03-20:17:32:11,912 INFO     [modeling.py:799] We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Downloading readme: 100%|█████████████████████████████████████| 10.5k/10.5k [00:00<00:00, 23.4MB/s]
+Downloading data: 100%|█████████████████████████████████████████| 733k/733k [00:00<00:00, 2.37MB/s]
+Downloading data: 100%|███████████████████████████████████████| 6.36M/6.36M [00:00<00:00, 12.1MB/s]
+Downloading data: 100%|█████████████████████████████████████████| 657k/657k [00:00<00:00, 9.52MB/s]
+Generating test split: 100%|█████████████████████████| 4358/4358 [00:00<00:00, 22415.87 examples/s]
+Generating train split: 100%|█████████████████████| 36718/36718 [00:00<00:00, 346102.14 examples/s]
+Generating validation split: 100%|██████████████████| 3760/3760 [00:00<00:00, 253082.50 examples/s]
+Perplexity 6.928: 100%|██████████████████████████████████████████| 163/163 [02:34<00:00,  1.05it/s]
+(llm) [siweicui@grace1 AutoAWQ]$ 
+
