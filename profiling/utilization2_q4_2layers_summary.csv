@@ -1,0 +1,22 @@
+Demangled Name,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active [%],smsp__inst_executed_pipe_tensor_op_hmma.sum [inst],smsp__inst_executed_pipe_tensor_op_imma.sum [inst],smsp__sass_thread_inst_executed_op_fp16_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_fp32_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_fp64_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_integer_pred_on.sum [inst]
+"k_compute_batched_ptrs(const __half *, const __half *, char *, const void **, void **, long, long, long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, long, long)",0.0,0.0,0.0,0.0,64.0,0.0,2062.0
+"k_sum_rows_f32(const float *, float *, int)",0.0,0.0,0.0,0.0,131.0,0.0,73.0
+"quantize_q8_1(const float *, void *, int, int)",0.0,0.0,0.0,0.0,95772.44444444444,0.0,134599.11111111112
+"silu_f32(const float *, float *, int)",0.0,0.0,0.0,0.0,71680.0,0.0,57344.0
+turing_h1688gemm_256x64_ldg8_stages_32x1_tn,29.86,49152.0,0.0,1839104.0,0.0,0.0,1775616.0
+"void convert_unary<__half, float>(const void *, T2 *, int)",0.0,0.0,0.0,3072.0,0.0,0.0,12288.0
+"void convert_unary<float, __half>(const void *, T2 *, int)",0.0,0.0,0.0,0.0,0.0,0.0,12288.0
+"void cpy_f32_f16<&cpy_1_f32_f16>(const char *, char *, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,4096.0,0.0,91141.0
+"void cpy_f32_f16<&cpy_1_f32_f32>(const char *, char *, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,16384.0,0.0,356414.0
+"void dequantize_mul_mat_vec<(int)1, (int)1, &convert_f16>(const void *, const float *, float *, int, int)",0.0,0.0,0.0,32768.0,33800.0,0.0,37896.0
+"void k_argsort_f32_i32<(ggml_sort_order)1>(const float *, int *, int)",0.0,0.0,0.0,0.0,24.0,0.0,672.0
+"void k_bin_bcast<&op_add, float, float, float>(const T2 *, const T3 *, T4 *, int, int, int, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,14336.0,0.0,245760.0
+"void k_bin_bcast<&op_div, float, float, float>(const T2 *, const T3 *, T4 *, int, int, int, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,9.0,0.0,121.0
+"void k_bin_bcast<&op_mul, float, float, float>(const T2 *, const T3 *, T4 *, int, int, int, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,26282.666666666668,0.0,452266.25
+"void k_get_rows_float<float, float>(const T1 *, const int *, T2 *, long, long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)",0.0,0.0,0.0,0.0,512.0,0.0,9824.0
+"void mul_mat_vec_q<(int)32, (int)4, block_q4_0, (int)2, &vec_dot_q4_0_q8_1>(const void *, const void *, float *, int, int)",0.059333333333333335,0.0,0.0,9437184.0,10670080.0,0.0,56991744.0
+"void mul_mat_vec_q<(int)32, (int)8, block_q8_0, (int)2, &vec_dot_q8_0_q8_1>(const void *, const void *, float *, int, int)",0.02,0.0,0.0,1048576.0,1180672.0,0.0,3245056.0
+"void rms_norm_f32<(int)1024>(const float *, float *, int, float)",0.0,0.0,0.0,0.0,21504.0,0.0,34880.0
+"void rope<float, (bool)1>(const T1 *, T1 *, int, const int *, float, int, float, float, float, rope_corr_dims)",0.0,0.0,0.0,0.0,23040.0,0.0,39680.0
+"void soft_max_f32<(bool)1, (int)0, (int)0>(const float *, const float *, float *, int, int, float)",0.0,0.0,0.0,0.0,408.0,0.0,824.0
+"void soft_max_f32<(bool)1, (int)64, (int)64>(const float *, const float *, float *, int, int, float)",0.0,0.0,0.0,0.0,59392.0,0.0,61376.0

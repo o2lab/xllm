@@ -1,0 +1,15 @@
+Demangled Name,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active [%],smsp__inst_executed_pipe_tensor_op_hmma.sum [inst],smsp__inst_executed_pipe_tensor_op_imma.sum [inst],smsp__sass_thread_inst_executed_op_fp16_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_fp32_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_fp64_pred_on.sum [inst],smsp__sass_thread_inst_executed_op_integer_pred_on.sum [inst]
+"k_compute_batched_ptrs(const __half *, const __half *, char *, const void **, void **, long, long, long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, long, long)",0.0,0.0,0.0,0.0,64.0,0.0,2062.0
+"silu_f32(const float *, float *, int)",0.0,0.0,0.0,0.0,71680.0,0.0,57344.0
+"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)7, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",0.0,0.0,0.0,0.0,26284139.789473683,0.0,74553344.0
+"std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)8, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",0.0,0.0,0.0,0.0,58871808.0,0.0,155103232.0
+turing_h1688gemm_256x64_ldg8_stages_32x1_tn,25.123749999999998,40960.0,0.0,1576960.0,0.0,0.0,1722368.0
+"void convert_unary<__half, float>(const void *, T2 *, int)",0.0,0.0,0.0,2560.0,0.0,0.0,10240.0
+"void convert_unary<float, __half>(const void *, T2 *, int)",0.0,0.0,0.0,0.0,0.0,0.0,9362.285714285714
+"void cpy_f32_f16<&cpy_1_f32_f16>(const char *, char *, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,4096.0,0.0,91141.0
+"void cpy_f32_f16<&cpy_1_f32_f32>(const char *, char *, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,16384.0,0.0,356414.0
+"void k_bin_bcast<&op_add, float, float, float>(const T2 *, const T3 *, T4 *, int, int, int, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,14336.0,0.0,245760.0
+"void k_bin_bcast<&op_mul, float, float, float>(const T2 *, const T3 *, T4 *, int, int, int, int, int, int, int, int, int, int, int, int, int, int)",0.0,0.0,0.0,0.0,26282.666666666668,0.0,450560.0
+"void rms_norm_f32<(int)1024>(const float *, float *, int, float)",0.0,0.0,0.0,0.0,21504.0,0.0,34880.0
+"void rope<float, (bool)1>(const T1 *, T1 *, int, const int *, float, int, float, float, float, rope_corr_dims)",0.0,0.0,0.0,0.0,23040.0,0.0,39680.0
+"void soft_max_f32<(bool)1, (int)32, (int)32>(const float *, const float *, float *, int, int, float)",0.0,0.0,0.0,0.0,19456.0,0.0,27616.0
