@@ -1,0 +1,46 @@
+/var/spool/slurmd/job9460092/slurm_script: line 20: activate: No such file or directory
+OVERRIDE: Failed
+Access denied by pam_slurm_adopt: you have no active jobs on this node
+Authentication failed.
+Running Master Jobs
+[E socket.cpp:860] [c10d] The client socket has timed out after 900s while trying to connect to (c242, 1234).
+Traceback (most recent call last):
+  File "/scratch/user/siweicui/.conda/envs/llm/bin/torchrun", line 33, in <module>
+    sys.exit(load_entry_point('torch==2.0.1', 'console_scripts', 'torchrun')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/run.py", line 794, in main
+    run(args)
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/run.py", line 785, in run
+    elastic_launch(
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/launcher/api.py", line 241, in launch_agent
+    result = agent.run()
+             ^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/agent/server/api.py", line 723, in run
+    result = self._invoke_run(role)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/agent/server/api.py", line 858, in _invoke_run
+    self._initialize_workers(self._worker_group)
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/agent/server/api.py", line 692, in _initialize_workers
+    self._rendezvous(worker_group)
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/metrics/api.py", line 129, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/agent/server/api.py", line 546, in _rendezvous
+    store, group_rank, group_world_size = spec.rdzv_handler.next_rendezvous()
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/user/siweicui/.conda/envs/llm/lib/python3.11/site-packages/torch/distributed/elastic/rendezvous/static_tcp_rendezvous.py", line 55, in next_rendezvous
+    self._store = TCPStore(  # type: ignore[call-arg]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The client socket has timed out after 900s while trying to connect to (c242, 1234).
