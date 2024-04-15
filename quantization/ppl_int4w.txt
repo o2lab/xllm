@@ -1,0 +1,1 @@
+The ppl for 4bit weight quantization is:wikitext: {'word_perplexity,none': 6.6448226652838285, 'word_perplexity_stderr,none': 'N/A', 'byte_perplexity,none': 1.4249791381250467, 'byte_perplexity_stderr,none': 'N/A', 'bits_per_byte,none': 0.5109407981939745, 'bits_per_byte_stderr,none': 'N/A', 'alias': 'wikitext'}
